@@ -29,11 +29,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nome_user"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNameRegister"
         android:importantForAutofill="no" />
 
     <EditText
-        android:id="@+id/nome_user"
+        android:id="@+id/editTextNameRegister"
         android:layout_width="338dp"
         android:layout_height="55dp"
         android:layout_marginTop="80dp"
@@ -48,7 +48,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <TextView
-        android:id="@+id/editTextTextEmailAddress3"
+        android:id="@+id/editTextEmailRegister"
         android:layout_width="336dp"
         android:layout_height="42dp"
         android:layout_marginTop="8dp"

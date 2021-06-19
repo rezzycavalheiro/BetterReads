@@ -28,9 +28,9 @@ public class Profile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        nomeUser = findViewById(R.id.nome_user);
+        nomeUser = findViewById(R.id.editTextNameRegister);
         phoneUser = findViewById(R.id.telefone_user);
-        emailUser = findViewById(R.id.editTextTextEmailAddress3);
+        emailUser = findViewById(R.id.editTextEmailRegister);
         updateButton = findViewById(R.id.update_button);
         deleteButton = findViewById(R.id.delete_button);
 

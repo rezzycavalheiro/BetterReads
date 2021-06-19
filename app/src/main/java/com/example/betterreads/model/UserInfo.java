@@ -26,6 +26,10 @@ public class UserInfo {
         this.password = password;
     }
 
+    public UserInfo(String nome) {
+        this.nome = nome;
+    }
+
     public long getId() {
         return id;
     }
