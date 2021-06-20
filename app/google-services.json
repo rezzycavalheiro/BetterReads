@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "684669027355",
+    "project_id": "betterreads-2f95c",
+    "storage_bucket": "betterreads-2f95c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:684669027355:android:7e478e679ec276430824be",
+        "android_client_info": {
+          "package_name": "com.example.betterreads"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "684669027355-8ds52n2q57bflktukf6qhenbfi8nn2pg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHZVA9UH_F-5oOzvkfFwzMGnhAWcQfZpg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "684669027355-8ds52n2q57bflktukf6qhenbfi8nn2pg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

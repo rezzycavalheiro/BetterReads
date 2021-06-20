@@ -44,4 +44,8 @@
     <string name="update_profile_button">Alterar dados</string>
     <string name="pic_1">Foto 1</string>
     <string name="picture_of_car">Picture of car</string>
+    <string name="logoutButton">Sair</string>
+    <string name="userEmailRegistered">E-mail cadastrado</string>
+    <string name="resetPwd">Redefinir senha</string>
+    <string name="textProfileTitle">Perfil</string>
 </resources>

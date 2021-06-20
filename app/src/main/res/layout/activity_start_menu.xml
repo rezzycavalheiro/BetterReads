@@ -7,15 +7,45 @@
     tools:context=".view.StartMenu">
 
     <Button
+        android:id="@+id/my_profile_button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="244dp"
+        android:fontFamily="@font/carter_one"
+        android:onClick="myProfileButton"
+        android:text="@string/my_profile_button"
+        app:backgroundTint="#30A1C6"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/order_start_manu_button"
+        app:layout_constraintVertical_bias="0.057" />
+
+    <Button
         android:id="@+id/order_start_manu_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="244dp"
+        android:layout_marginTop="220dp"
         android:fontFamily="@font/carter_one"
         android:onClick="orderButton"
         android:text="@string/order_menu_start_button"
         app:backgroundTint="#30A1C6"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/logOutButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="328dp"
+        android:fontFamily="@font/carter_one"
+        android:onClick="signOutButton"
+        android:text="@string/logoutButton"
+        app:backgroundTint="#30A1C6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

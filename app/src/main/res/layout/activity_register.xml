@@ -7,23 +7,10 @@
     tools:context=".view.Register">
 
     <EditText
-        android:id="@+id/telefone_user"
+        android:id="@+id/editTextNameRegister"
         android:layout_width="338dp"
         android:layout_height="55dp"
-        android:ems="10"
-        android:fontFamily="@font/carter_one"
-        android:hint="@string/telefone_edit_Text"
-        android:inputType="phone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nome_user" />
-
-    <EditText
-        android:id="@+id/nome_user"
-        android:layout_width="338dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="60dp"
         android:ems="10"
         android:fontFamily="@font/carter_one"
         android:hint="@string/nome_edit_text"
@@ -31,10 +18,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.479"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/profileTitle"
+        android:importantForAutofill="no" />
 
     <EditText
-        android:id="@+id/editTextTextPassword4"
+        android:id="@+id/editTextPwdRepeatRegister"
         android:layout_width="338dp"
         android:layout_height="52dp"
         android:ems="10"
@@ -44,10 +32,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.479"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword3" />
+        app:layout_constraintTop_toBottomOf="@+id/editTExtPwdRegister"
+        android:importantForAutofill="no" />
 
     <EditText
-        android:id="@+id/editTextTextPassword3"
+        android:id="@+id/editTExtPwdRegister"
         android:layout_width="338dp"
         android:layout_height="56dp"
         android:ems="10"
@@ -57,10 +46,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.471"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress3" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextEmailRegister"
+        android:importantForAutofill="no" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress3"
+        android:id="@+id/editTextEmailRegister"
         android:layout_width="338dp"
         android:layout_height="55dp"
         android:ems="10"
@@ -70,7 +60,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.479"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/telefone_user" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextNameRegister"
+        android:importantForAutofill="no" />
 
     <Button
         android:id="@+id/update_button"
@@ -78,17 +69,18 @@
         android:layout_height="55dp"
         android:layout_marginBottom="104dp"
         android:fontFamily="@font/carter_one"
+        android:onClick="onRegister"
         android:text="@string/cadastrar_button_2"
         app:backgroundTint="#30A1C6"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword4"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPwdRepeatRegister"
         app:layout_constraintVertical_bias="0.676" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/profileTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"

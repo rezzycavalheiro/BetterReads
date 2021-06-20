@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.lavacarapp">
+    package="com.example.betterreads">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -13,17 +13,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LavaCarApp">
-        <activity android:name=".view.Profile"></activity>
-        <activity android:name=".view.StartMenu" />
+        <activity android:name="com.example.betterreads.view.Profile"></activity>
+        <activity android:name="com.example.betterreads.view.StartMenu" />
         <activity
-            android:name=".view.PopUpInfo"
+            android:name="com.example.betterreads.view.PopUpInfo"
             android:theme="@style/PopInfo" />
-        <activity android:name=".view.OrderSent" />
-        <activity android:name=".view.OrderPage" />
-        <activity android:name=".view.CameraPage" />
-        <activity android:name=".view.Register" />
-        <activity android:name=".view.Login" />
-        <activity android:name=".view.MainActivity">
+        <activity android:name="com.example.betterreads.view.OrderSent" />
+        <activity android:name="com.example.betterreads.view.OrderPage" />
+        <activity android:name="com.example.betterreads.view.CameraPage" />
+        <activity android:name="com.example.betterreads.view.Register" />
+        <activity android:name="com.example.betterreads.view.Login" />
+        <activity android:name="com.example.betterreads.view.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -33,7 +33,7 @@
 
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.example.lavacarapp.fileprovider"
+            android:authorities="com.example.betterreads.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
