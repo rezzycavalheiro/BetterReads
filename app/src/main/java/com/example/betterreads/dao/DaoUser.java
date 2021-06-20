@@ -32,7 +32,6 @@ public class DaoUser {
         try {
             ContentValues values = new ContentValues();
             values.put(COL_NAME, user.getNome());
-            values.put(COL_PHONE, user.getTelefone());
             values.put(COL_EMAIL, user.getEmail());
             values.put(COL_PASSWORD, user.getPassword());
             long id = db.insert(DB_TABLE, null, values);
@@ -45,36 +44,6 @@ public class DaoUser {
             db.close();
         }
         return 0;
-    }
-
-    //RETRIEVE - TRAZER OS DADOS DO BD (LISTA COM TODOS OS USUÁRIOS)
-    public ArrayList<UserInfo> retrieveUsersFromDB() {
-        SQLiteDatabase db = conexaoSQLite.getReadableDatabase();
-        Cursor cursor = db.query(DB_TABLE, null, null,
-                null, null, null, null);
-        ArrayList<UserInfo> users = new ArrayList<>();
-
-        try {
-            if (cursor.moveToFirst()) {
-                do {
-                    long id = cursor.getLong(cursor.getColumnIndex(COL_ID));
-                    String nome = cursor.getString(cursor.getColumnIndex(COL_NAME));
-                    String telefone = cursor.getString(cursor.getColumnIndex(COL_PHONE));
-                    String email = cursor.getString(cursor.getColumnIndex(COL_EMAIL));
-                    String password = cursor.getString(cursor.getColumnIndex(COL_PASSWORD));
-
-                    UserInfo c = new UserInfo(id, nome, telefone, email, password);
-                    users.add(c);
-
-                } while (cursor.moveToNext());
-            }
-            db.close();
-            return users;
-        } catch (SQLException e) {
-            e.printStackTrace();
-            db.close();
-        }
-        return users;
     }
 
     // RETRIEVE - O USUÁRIO LOGADO DO BD
@@ -92,11 +61,10 @@ public class DaoUser {
         try {
             if (cursor.moveToFirst()) {
                 String nome = cursor.getString(cursor.getColumnIndex(COL_NAME));
-                String telefone = cursor.getString(cursor.getColumnIndex(COL_PHONE));
                 String emailUser = cursor.getString(cursor.getColumnIndex(COL_EMAIL));
                 String password = cursor.getString(cursor.getColumnIndex(COL_PASSWORD));
 
-                c = new UserInfo(nome, telefone, emailUser, password);
+                c = new UserInfo(nome, emailUser, password);
             }
             db.close();
             return c;
@@ -108,14 +76,12 @@ public class DaoUser {
     }
 
     // UPDATE - ALTERAR DADOS NO BD
-    public int updateUserInDB(String email, String name, String phone) {
+    public int updateUserInDB(String email) {
         SQLiteDatabase db = conexaoSQLite.getReadableDatabase();
         int count = 0;
 
         try {
             ContentValues values = new ContentValues();
-            values.put(COL_NAME, name);
-            values.put(COL_PHONE, phone);
             count = db.update(DB_TABLE, values, COL_EMAIL + "= ?", new String[]{email});
             db.close();
             return count;

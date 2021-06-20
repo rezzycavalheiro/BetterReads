@@ -28,9 +28,7 @@ public class StartMenu extends AppCompatActivity {
     }
 
     public void myProfileButton(View view){
-        String userEmail = getIntent().getStringExtra("EMAIL");
         Intent intent = new Intent(this, Profile.class);
-        intent.putExtra("EMAIL", userEmail);
         startActivity(intent);
     }
 

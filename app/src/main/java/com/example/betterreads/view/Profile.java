@@ -1,11 +1,16 @@
 package com.example.betterreads.view;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,78 +21,101 @@ import com.example.betterreads.R;
 import com.example.betterreads.controller.UserCtrl;
 import com.example.betterreads.model.UserDatabase;
 import com.example.betterreads.model.UserInfo;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthCredential;
+import com.google.firebase.auth.EmailAuthProvider;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.text.BreakIterator;
+
 
 public class Profile extends AppCompatActivity {
 
-    private EditText nomeUser, phoneUser, password, newPassword;
+    private EditText pwdUser;
     private TextView emailUser;
     private Button updateButton, deleteButton;
+    DatabaseReference dbReference;
+    FirebaseAuth firebaseAuth;
+    FirebaseUser firebaseUser;
+    String firebaseUserEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        nomeUser = findViewById(R.id.editTextNameRegister);
-        phoneUser = findViewById(R.id.telefone_user);
+        pwdUser = findViewById(R.id.editTextPwdProfile);
         emailUser = findViewById(R.id.editTextEmailRegister);
         updateButton = findViewById(R.id.update_button);
         deleteButton = findViewById(R.id.delete_button);
+        dbReference = FirebaseDatabase.getInstance().getReference("Info");
+        firebaseAuth = FirebaseAuth.getInstance();
 
-        String userEmail = getIntent().getStringExtra("EMAIL");
-
-        UserCtrl userCtrl = new UserCtrl(UserDatabase.getInstance(this));
-
-        UserInfo loggedUser = userCtrl.getUserInfo(userEmail);
-
-        if(loggedUser != null){
-            nomeUser.setText(loggedUser.getNome());
-            phoneUser.setText((loggedUser.getTelefone()));
-            emailUser.setText(loggedUser.getEmail());
         }
-        else {
+
+    protected void onStart() {
+        super.onStart();
+
+        firebaseUser = firebaseAuth.getCurrentUser();
+
+        if (firebaseUser != null) {
+            firebaseUserEmail = firebaseUser.getEmail();
+            emailUser.setText(firebaseUserEmail);
+        } else {
+            Toast.makeText(getApplicationContext(),"Erro ao carregar usuário:", Toast.LENGTH_LONG).show();
+        }
+    }
+
+    public void deleteUser(View view) {
+
+        String getPassword = pwdUser.getText().toString().trim();
+        Intent startPage = new Intent(this, MainActivity.class);
+
+        if (TextUtils.isEmpty(getPassword)) {
             AlertDialog.Builder builder = new AlertDialog.Builder(Profile.this);
-            builder.setMessage("Erro ao buscar dados na base.");
+            builder.setMessage("Digite sua senha para excluir o perfil.");
             builder.create().show();
-        }
-
-        updateButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                String nameToUpdate = nomeUser.getText().toString().trim();
-                String phoneToUpdate = phoneUser.getText().toString().trim();
-
-                if(nameToUpdate.equals(loggedUser.getNome()) && phoneToUpdate.equals(loggedUser.getTelefone())){
-                    AlertDialog.Builder builder = new AlertDialog.Builder(Profile.this);
-                    builder.setMessage("Dados iguais aos anteriores. Nada a ser atualizado.");
-                    builder.create().show();
-                }
-                else {
-                    userCtrl.alterarUser(loggedUser.getEmail(), nameToUpdate, phoneToUpdate);
-                    Toast.makeText(getApplicationContext(), "Dados atualizados com sucesso!", Toast.LENGTH_LONG).show();
-                }
-            }
-        });
-
-        deleteButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                AlertDialog.Builder builder = new AlertDialog.Builder(Profile.this);
-                builder.setMessage("Tem certeza de que deseja excluir o perfil?");
-
-                builder.setPositiveButton("Continuar", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        userCtrl.deletarUser(loggedUser.getEmail());
-                        Intent mainActivity = new Intent(view.getContext(), MainActivity.class);
-                        startActivity(mainActivity);
+        } else {
+            AuthCredential credential = EmailAuthProvider.getCredential(firebaseUser.getEmail(), getPassword);
+            firebaseUser.reauthenticate(credential).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if (task.isSuccessful()) {
+                        firebaseUser.delete().addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if (task.isSuccessful()) {
+                                    Toast.makeText(getApplicationContext(), "Usuário excluído com sucesso.", Toast.LENGTH_LONG).show();
+                                    startActivity(startPage);
+                                } else {
+                                    Toast.makeText(getApplicationContext(), "Erro ao deletar usuário.", Toast.LENGTH_LONG).show();
+                                }
+                            }
+                        });
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Senha incorreta.", Toast.LENGTH_LONG).show();
                     }
-                });
-                builder.setNegativeButton("Cancelar", null);
-                AlertDialog dialog = builder.create();
-                dialog.show();
+                }
+            });
+        }
+    }
+
+    public void changePwd (View view) {
+        firebaseAuth.sendPasswordResetEmail(firebaseUserEmail).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()) {
+                    Toast.makeText(getApplicationContext(),"E-mail para redefinição de senha enviado.", Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(getApplicationContext(),"Erro ao enviar e-mail.", Toast.LENGTH_LONG).show();
+                }
             }
         });
     }

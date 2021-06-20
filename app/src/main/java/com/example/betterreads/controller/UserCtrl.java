@@ -20,8 +20,8 @@ public class UserCtrl {
         return daoUser.checkUser(user.getEmail(), user.getPassword());
     }
 
-    public void alterarUser(String email, String name, String phone){
-        daoUser.updateUserInDB(email, name, phone);
+    public void alterarUser(String email){
+        daoUser.updateUserInDB(email);
     }
 
     public UserInfo getUserInfo(String email){
