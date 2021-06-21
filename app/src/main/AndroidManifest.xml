@@ -12,15 +12,14 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.LavaCarApp">
-        <activity android:name="com.example.betterreads.view.Profile"></activity>
-        <activity android:name="com.example.betterreads.view.StartMenu" />
-        <activity android:name="com.example.betterreads.view.OrderSent" />
-        <activity android:name="com.example.betterreads.view.OrderPage" />
-        <activity android:name="com.example.betterreads.view.CameraPage" />
-        <activity android:name="com.example.betterreads.view.Register" />
-        <activity android:name="com.example.betterreads.view.Login" />
-        <activity android:name="com.example.betterreads.view.MainActivity">
+        android:theme="@style/Theme.BetterReads">
+        <activity android:name=".view.Profile" />
+        <activity android:name=".view.StartMenu" />
+        <activity android:name=".view.OrderPage" />
+        <activity android:name=".view.CameraPage" />
+        <activity android:name=".view.Register" />
+        <activity android:name=".view.Login" />
+        <activity android:name=".view.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

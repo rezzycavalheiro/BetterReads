@@ -12,7 +12,6 @@
         android:layout_width="381dp"
         android:layout_height="364dp"
         android:layout_marginTop="76dp"
-        android:contentDescription="@string/logo_for_the_car_wash"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

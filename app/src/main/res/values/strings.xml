@@ -1,7 +1,6 @@
 <resources>
-    <string name="app_name">LavaCarApp</string>
+    <string name="app_name">BetterReads</string>
     <string name="log_in">Log in</string>
-    <string name="logo_for_the_car_wash">Logo for the car wash</string>
     <string name="cadastro">Cadastro</string>
     <string name="log_in_button_2">Log in</string>
     <string name="password_edit_text">senha</string>
@@ -13,9 +12,7 @@
     <string name="log_in_button">Log in</string>
     <string name="telefone_edit_Text">telefone</string>
     <string name="nome_edit_text">nome</string>
-    <string name="splash_description">Agende a limpeza do seu carro sem sair de casa!</string>
     <string name="logged_page_desc">Adicione fotos do seu carro.</string>
-    <string name="logged_page_desc2">As fotos serão usadas para conferir o estado do carro antes da limpeza.</string>
     <string name="open_cam_title">Abrir câmera</string>
     <string name="camera_logo">Camera logo</string>
     <string name="order_title_page">Faça seu pedido!</string>

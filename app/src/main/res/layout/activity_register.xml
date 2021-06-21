@@ -12,66 +12,67 @@
         android:layout_height="55dp"
         android:layout_marginTop="60dp"
         android:ems="10"
-        android:fontFamily="@font/carter_one"
+        android:fontFamily="@font/poppins_light"
         android:hint="@string/nome_edit_text"
+        android:importantForAutofill="no"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.479"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profileTitle"
-        android:importantForAutofill="no" />
+        app:layout_constraintTop_toBottomOf="@+id/profileTitle" />
 
     <EditText
         android:id="@+id/editTextPwdRepeatRegister"
         android:layout_width="338dp"
         android:layout_height="52dp"
         android:ems="10"
-        android:fontFamily="@font/carter_one"
+        android:fontFamily="@font/poppins_light"
         android:hint="@string/repetir_senha_edit_text"
+        android:importantForAutofill="no"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.479"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTExtPwdRegister"
-        android:importantForAutofill="no" />
+        app:layout_constraintTop_toBottomOf="@+id/editTExtPwdRegister" />
 
     <EditText
         android:id="@+id/editTExtPwdRegister"
         android:layout_width="338dp"
         android:layout_height="56dp"
         android:ems="10"
-        android:fontFamily="@font/carter_one"
+        android:fontFamily="@font/poppins_light"
         android:hint="@string/password_edit_text"
+        android:importantForAutofill="no"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.471"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextEmailRegister"
-        android:importantForAutofill="no" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextEmailRegister" />
 
     <EditText
         android:id="@+id/editTextEmailRegister"
         android:layout_width="338dp"
         android:layout_height="55dp"
         android:ems="10"
-        android:fontFamily="@font/carter_one"
+        android:fontFamily="@font/poppins_light"
         android:hint="@string/e_mail_edit_text"
+        android:importantForAutofill="no"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.479"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNameRegister"
-        android:importantForAutofill="no" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextNameRegister" />
 
     <Button
         android:id="@+id/update_button"
         android:layout_width="132dp"
         android:layout_height="55dp"
         android:layout_marginBottom="104dp"
-        android:fontFamily="@font/carter_one"
+        android:fontFamily="@font/poppins_light"
         android:onClick="onRegister"
         android:text="@string/cadastrar_button_2"
-        app:backgroundTint="#30A1C6"
+        android:textStyle="bold"
+        app:backgroundTint="#0C6980"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -84,9 +85,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-        android:fontFamily="@font/carter_one"
+        android:fontFamily="@font/poppins_light"
         android:text="@string/cadastro_titke"
-        android:textColor="#30A1C6"
+        android:textColor="#8CC2C9"
         android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
