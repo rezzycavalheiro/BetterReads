@@ -82,7 +82,7 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
-                                                <entry key="imagePath" value="C:\Users\recav\Downloads\arrow.png" />
+                                                <entry key="imagePath" value="D:\Faculdade\DispositivosMoveis\betterReadsTransparentBackground.png" />
                                                 <entry key="trimmed" value="true" />
                                               </map>
                                             </option>
@@ -117,7 +117,7 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="outputName" value="arrow_back" />
+                                      <entry key="outputName" value="better_reads_logo" />
                                     </map>
                                   </option>
                                 </PersistentState>

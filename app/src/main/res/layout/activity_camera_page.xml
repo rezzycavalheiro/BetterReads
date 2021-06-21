@@ -37,33 +37,18 @@
         app:layout_constraintStart_toStartOf="@+id/imageViewCamera" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/picPageTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/carter_one"
-        android:text="@string/logged_page_desc"
+        android:text="@string/adicione_fotos_dos_seus_livros"
         android:textColor="#000000"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="348dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="36dp"
-        android:fontFamily="@font/carter_one"
-        android:gravity="center"
-        android:text="@string/logged_page_desc2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.523"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.014" />
 
     <TextView
         android:id="@+id/textView7"
@@ -101,14 +86,15 @@
 
     <ImageView
         android:id="@+id/imageViewCamera"
-        android:layout_width="291dp"
-        android:layout_height="241dp"
+        android:layout_width="328dp"
+        android:layout_height="280dp"
         android:contentDescription="@string/camera_logo_for_picture"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.37"
+        app:layout_constraintVertical_bias="0.235"
         app:srcCompat="@android:drawable/ic_menu_camera" />
 
     <ImageButton

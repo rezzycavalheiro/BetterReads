@@ -48,4 +48,7 @@
     <string name="userEmailRegistered">E-mail cadastrado</string>
     <string name="resetPwd">Redefinir senha</string>
     <string name="textProfileTitle">Perfil</string>
+    <string name="adicione_fotos_dos_seus_livros">Adicione fotos dos seus livros</string>
+    <string name="editTextPwdProfile">senha</string>
+    <string name="registerMainButton">Cadastre-se</string>
 </resources>

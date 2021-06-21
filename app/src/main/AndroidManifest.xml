@@ -15,9 +15,6 @@
         android:theme="@style/Theme.LavaCarApp">
         <activity android:name="com.example.betterreads.view.Profile"></activity>
         <activity android:name="com.example.betterreads.view.StartMenu" />
-        <activity
-            android:name="com.example.betterreads.view.PopUpInfo"
-            android:theme="@style/PopInfo" />
         <activity android:name="com.example.betterreads.view.OrderSent" />
         <activity android:name="com.example.betterreads.view.OrderPage" />
         <activity android:name="com.example.betterreads.view.CameraPage" />

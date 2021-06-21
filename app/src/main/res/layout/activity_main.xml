@@ -9,15 +9,14 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="240dp"
-        android:layout_height="233dp"
-        android:layout_marginTop="100dp"
+        android:layout_width="381dp"
+        android:layout_height="364dp"
+        android:layout_marginTop="76dp"
         android:contentDescription="@string/logo_for_the_car_wash"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/splash_logo_2_foreground" />
+        app:srcCompat="@mipmap/better_reads_logo_foreground" />
 
     <Button
         android:id="@+id/login_button"
@@ -25,45 +24,30 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
         android:layout_marginBottom="8dp"
-        android:fontFamily="@font/carter_one"
+        android:fontFamily="@font/poppins_light"
         android:onClick="loginButton"
         android:text="@string/log_in_button"
-        app:backgroundTint="#30A1C6"
+        android:textStyle="bold"
+        app:backgroundTint="#0C6980"
         app:layout_constraintBottom_toTopOf="@+id/update_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.993" />
 
     <Button
         android:id="@+id/update_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="68dp"
-        android:fontFamily="@font/carter_one"
+        android:layout_marginBottom="132dp"
+        android:fontFamily="@font/poppins_light"
         android:onClick="registerButton"
-        android:text="@string/cadastro"
-        app:backgroundTint="#30A1C6"
+        android:text="@string/registerMainButton"
+        android:textStyle="bold"
+        app:backgroundTint="#0C6980"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="287dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="44dp"
-        android:fontFamily="@font/carter_one"
-        android:gravity="center"
-        android:text="@string/splash_description"
-        android:textColor="#040404"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/login_button"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="0.489"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="1.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>
