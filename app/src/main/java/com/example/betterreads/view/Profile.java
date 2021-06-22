@@ -95,9 +95,7 @@ public class Profile extends Fragment {
         Intent startPage = new Intent(getActivity().getApplicationContext(), MainActivity.class);
 
         if (TextUtils.isEmpty(getPassword)) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity().getApplicationContext());
-            builder.setMessage("Digite sua senha para excluir o perfil.");
-            builder.create().show();
+            Toast.makeText(getActivity().getApplicationContext(), "Digite sua senha para excluir o perfil.", Toast.LENGTH_LONG).show();
         } else {
             AuthCredential credential = EmailAuthProvider.getCredential(firebaseUser.getEmail(), getPassword);
             firebaseUser.reauthenticate(credential).addOnCompleteListener(new OnCompleteListener<Void>() {

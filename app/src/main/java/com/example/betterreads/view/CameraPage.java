@@ -40,28 +40,12 @@ public class CameraPage extends AppCompatActivity {
     static final int GALLERY_SELECT_IMAGE = 4001;
     ImageView imageViewCamera;
     String picturePath;
-    Button backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera_page);
         imageViewCamera = findViewById(R.id.imageViewCamera);
-        backButton = findViewById(R.id.backButton);
-
-//        backButton.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-//
-//                PhotoModel.getInstance().picturesArrayList.add(new Pictures(picturePath));
-//                Fragment frag = new AddCover();
-//
-//                androidx.fragment.app.FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-//                ft.replace(R.id.fragment_cover, frag);
-//                ft.setTransition(androidx.fragment.app.FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-//                ft.addToBackStack(null);
-//                ft.commit();
-//            }
-//        });
     }
 
     public void cameraButton(View view){
