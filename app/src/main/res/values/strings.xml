@@ -48,4 +48,8 @@
     <string name="adicione_fotos_dos_seus_livros">Adicione fotos dos seus livros</string>
     <string name="editTextPwdProfile">senha</string>
     <string name="registerMainButton">Cadastre-se</string>
+    <string name="addBookButton">Adicionar livro</string>
+    <string name="tituloRecyclerView">Título</string>
+    <string name="authorRecyclerView">Autor</string>
+    <string name="statusRecyclerView">Status</string>
 </resources>

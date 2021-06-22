@@ -39,10 +39,4 @@ public class OrderPage extends AppCompatActivity {
         Intent intent = new Intent(this, CameraPage.class);
         startActivity(intent);
     }
-    
-    // BOTÃO PARA VOLTAR PARA TELA DE MENU
-    public void menuPageButton(View view){
-        Intent intent = new Intent(this, StartMenu.class);
-        startActivity(intent);
-    }
 }

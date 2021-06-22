@@ -35,14 +35,6 @@ public class UserInfo {
         this.nome = nome;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
     @Override
     public String toString() {
         return "UserInfo{" +
