@@ -4,54 +4,56 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.AddCover">
+    tools:context=".view.AddCover"
+    android:id="@+id/fragment_add_cover">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".view.OrderPage">
+        tools:context=".view.AddCover"
+        android:id="@+id/fragment_cover">
 
         <Button
             android:id="@+id/add_pic_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="40dp"
             android:fontFamily="@font/poppins_light"
             android:text="@string/adicionar_foto_button"
             android:textStyle="bold"
             app:backgroundTint="#0C6980"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.514"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/order_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="32dp"
             android:fontFamily="@font/poppins_light"
             android:text="Meus livros"
             android:textColor="#050505"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/rv_CoverBooks"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_CoverBooks"
-            android:layout_width="367dp"
-            android:layout_height="455dp"
+            android:layout_width="363dp"
+            android:layout_height="385dp"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
-            android:layout_marginBottom="28dp"
             app:layout_constraintBottom_toTopOf="@+id/add_pic_button"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/order_title"
+            app:layout_constraintVertical_bias="0.166" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

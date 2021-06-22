@@ -4,17 +4,17 @@
     <item
         android:id="@+id/home"
         android:icon="@drawable/ic_baseline_home_24"
-        android:title="Inicial" />
+        android:title="@string/homeFrag" />
     <item
         android:id="@+id/addBook"
         android:icon="@drawable/ic_baseline_menu_book_24"
-        android:title="Novo Livro" />
+        android:title="@string/newBookFrag" />
     <item
         android:id="@+id/addCover"
         android:icon="@drawable/ic_baseline_book_24"
-        android:title="Nova Capa" />
+        android:title="@string/newPicFrag" />
     <item
         android:id="@+id/perfil"
         android:icon="@drawable/ic_baseline_person_24"
-        android:title="Perfil" />
+        android:title="@string/profileFrag" />
 </menu>

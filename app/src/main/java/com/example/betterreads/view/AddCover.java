@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.betterreads.R;
 import com.example.betterreads.model.Pictures;
@@ -27,10 +28,13 @@ public class AddCover extends Fragment {
     RecyclerViewAdapter adapter;
 
     @Nullable
+
+
+
     @org.jetbrains.annotations.Nullable
     @Override
     public View onCreateView(@NonNull @NotNull LayoutInflater inflater, @Nullable @org.jetbrains.annotations.Nullable ViewGroup container, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_add_book,container,false);
+        View view = inflater.inflate(R.layout.fragment_add_cover,container,false);
         recyclerView = view.findViewById(R.id.rv_CoverBooks);
         adapter = new RecyclerViewAdapter(view.getContext(), carPaths);
         recyclerView.setLayoutManager(new GridLayoutManager(view.getContext().getApplicationContext(), 2));

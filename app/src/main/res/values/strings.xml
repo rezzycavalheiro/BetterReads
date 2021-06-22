@@ -63,4 +63,9 @@
     <string name="addPicButton">Adicionar capa</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="newBookFrag">Novo Livro</string>
+    <string name="newPicFrag">Nova Capa</string>
+    <string name="profileFrag">Perfil</string>
+    <string name="homeFrag">Início</string>
+    <string name="myBooksTitleFrag">Meus livros</string>
 </resources>

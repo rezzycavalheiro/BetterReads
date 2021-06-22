@@ -15,28 +15,32 @@
             android:id="@+id/profileTitle_Text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="27dp"
             android:fontFamily="@font/poppins_light"
             android:text="@string/textProfileTitle"
             android:textColor="#8CC2C9"
             android:textSize="36sp"
             android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/EmailRegister2_editText"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.468"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.54" />
 
         <EditText
             android:id="@+id/PwdProfile_editText"
             android:layout_width="334dp"
             android:layout_height="45dp"
+            android:layout_marginBottom="46dp"
             android:ems="10"
             android:fontFamily="@font/poppins_light"
             android:hint="@string/editTextPwdProfile"
             android:importantForAutofill="no"
             android:inputType="textPassword"
+            app:layout_constraintBottom_toTopOf="@+id/delete_button"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.48"
+            app:layout_constraintHorizontal_bias="0.545"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/EmailRegister_editText" />
 
@@ -44,18 +48,18 @@
             android:id="@+id/EmailRegister_editText"
             android:layout_width="336dp"
             android:layout_height="42dp"
+            android:layout_marginTop="120dp"
             android:ems="10"
             android:fontFamily="@font/poppins_light"
             android:gravity="center"
             android:hint="@string/e_mail_edit_text"
             android:importantForAutofill="no"
             android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/PwdProfile_editText"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintHorizontal_bias="0.533"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.336" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/EmailRegister2_editText"
@@ -69,25 +73,25 @@
             android:textColor="#020202"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/EmailRegister_editText"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.462"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.282" />
+            app:layout_constraintVertical_bias="1.0" />
 
         <Button
             android:id="@+id/delete_button"
-            android:layout_width="136dp"
-            android:layout_height="68dp"
-            android:layout_marginBottom="228dp"
+            android:layout_width="140dp"
+            android:layout_height="66dp"
+            android:layout_marginTop="46dp"
             android:fontFamily="@font/poppins_light"
             android:text="@string/delete_profile_button"
             android:textStyle="bold"
             app:backgroundTint="#0C6980"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/PwdProfile_editText" />
 
         <Button
             android:id="@+id/update_button"
@@ -98,22 +102,23 @@
             android:textStyle="bold"
             app:backgroundTint="#0C6980"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/delete_button" />
 
         <Button
             android:id="@+id/logOut_button"
-            android:layout_width="136dp"
+            android:layout_width="141dp"
             android:layout_height="62dp"
+            android:layout_marginTop="4dp"
             android:fontFamily="@font/poppins_light"
             android:text="@string/logoutButton"
             android:textStyle="bold"
             app:backgroundTint="#0C6980"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/update_button"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toBottomOf="@+id/update_button" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
