@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -34,7 +33,7 @@ public class Register extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
         nomeUser = findViewById(R.id.editTextNameRegister);
-        email = findViewById(R.id.editTextEmailRegister);
+        email = findViewById(R.id.EmailRegister_editText);
         password = findViewById(R.id.editTExtPwdRegister);
         confirmPassword = findViewById(R.id.editTextPwdRepeatRegister);
         firebaseAuth = FirebaseAuth.getInstance();

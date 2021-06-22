@@ -19,7 +19,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.479"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profileTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/profileTitle_Text" />
 
     <EditText
         android:id="@+id/editTextPwdRepeatRegister"
@@ -47,10 +47,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.471"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextEmailRegister" />
+        app:layout_constraintTop_toBottomOf="@+id/EmailRegister_editText" />
 
     <EditText
-        android:id="@+id/editTextEmailRegister"
+        android:id="@+id/EmailRegister_editText"
         android:layout_width="338dp"
         android:layout_height="55dp"
         android:ems="10"
@@ -81,7 +81,7 @@
         app:layout_constraintVertical_bias="0.676" />
 
     <TextView
-        android:id="@+id/profileTitle"
+        android:id="@+id/profileTitle_Text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"

@@ -154,9 +154,9 @@ public class CameraPage extends AppCompatActivity {
         }
     }
 
-    // VOLTA PARA A PÁGINA DE PEDIDOS
+    // VOLTA PARA A PÁGINA DE PEDIDOS -> menu inicial
     public void orderPageButton(View view){
-        Intent orderPage = new Intent(this, OrderPage.class);
+        Intent orderPage = new Intent(this, StartMenu.class);
         PhotoModel.getInstance().picturesArrayList.add(new Pictures(picturePath));
         startActivity(orderPage);
     }

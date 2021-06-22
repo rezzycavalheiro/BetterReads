@@ -61,4 +61,6 @@
     <string name="startMenuTitle">Meus livros</string>
     <string name="addButtonBook">Adicionar livro</string>
     <string name="addPicButton">Adicionar capa</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

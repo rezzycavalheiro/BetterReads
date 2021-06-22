@@ -1,13 +1,17 @@
 package com.example.betterreads.view;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
+import androidx.fragment.app.Fragment;
+
 import android.text.TextUtils;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -23,9 +27,9 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import org.jetbrains.annotations.NotNull;
 
-public class Profile extends AppCompatActivity {
-
+public class Profile extends Fragment {
     private EditText pwdUser;
     private TextView emailUser;
     private Button updateButton, deleteButton;
@@ -34,21 +38,45 @@ public class Profile extends AppCompatActivity {
     FirebaseUser firebaseUser;
     String firebaseUserEmail;
 
+    @Nullable
+    @org.jetbrains.annotations.Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
-
-        pwdUser = findViewById(R.id.editTextPwdProfile);
-        emailUser = findViewById(R.id.editTextEmailRegister);
-        updateButton = findViewById(R.id.update_button);
-        deleteButton = findViewById(R.id.delete_button);
+    public View onCreateView(@NonNull @NotNull LayoutInflater inflater, @Nullable @org.jetbrains.annotations.Nullable ViewGroup container, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_profile,container,false);
+        pwdUser = view.findViewById(R.id.PwdProfile_editText);
+        emailUser = view.findViewById(R.id.EmailRegister_editText);
+        updateButton = view.findViewById(R.id.update_button);
+        deleteButton = view.findViewById(R.id.delete_button);
         dbReference = FirebaseDatabase.getInstance().getReference("Info");
         firebaseAuth = FirebaseAuth.getInstance();
 
-        }
+        Button buttonDelete = view.findViewById(R.id.delete_button);
+        buttonDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                deleteUser(v);
+            }
+        });
 
-    protected void onStart() {
+        Button buttonChange = view.findViewById(R.id.update_button);
+        buttonChange.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                changePwd(v);
+            }
+        });
+
+        Button buttonExit = view.findViewById(R.id.logOut_button);
+        buttonExit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                signOutButton(v);
+            }
+        });
+        return view;
+    }
+
+    public void onStart() {
         super.onStart();
 
         firebaseUser = firebaseAuth.getCurrentUser();
@@ -57,17 +85,17 @@ public class Profile extends AppCompatActivity {
             firebaseUserEmail = firebaseUser.getEmail();
             emailUser.setText(firebaseUserEmail);
         } else {
-            Toast.makeText(getApplicationContext(),"Erro ao carregar usuário:", Toast.LENGTH_LONG).show();
+            Toast.makeText(getActivity().getApplicationContext(),"Erro ao carregar usuário:", Toast.LENGTH_LONG).show();
         }
     }
 
     public void deleteUser(View view) {
 
         String getPassword = pwdUser.getText().toString().trim();
-        Intent startPage = new Intent(this, MainActivity.class);
+        Intent startPage = new Intent(getActivity().getApplicationContext(), MainActivity.class);
 
         if (TextUtils.isEmpty(getPassword)) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(Profile.this);
+            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity().getApplicationContext());
             builder.setMessage("Digite sua senha para excluir o perfil.");
             builder.create().show();
         } else {
@@ -80,15 +108,15 @@ public class Profile extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
                                 if (task.isSuccessful()) {
-                                    Toast.makeText(getApplicationContext(), "Usuário excluído com sucesso.", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(getActivity().getApplicationContext(), "Usuário excluído com sucesso.", Toast.LENGTH_LONG).show();
                                     startActivity(startPage);
                                 } else {
-                                    Toast.makeText(getApplicationContext(), "Erro ao deletar usuário.", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(getActivity().getApplicationContext(), "Erro ao deletar usuário.", Toast.LENGTH_LONG).show();
                                 }
                             }
                         });
                     } else {
-                        Toast.makeText(getApplicationContext(), "Senha incorreta.", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getActivity().getApplicationContext(), "Senha incorreta.", Toast.LENGTH_LONG).show();
                     }
                 }
             });
@@ -100,9 +128,9 @@ public class Profile extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()) {
-                    Toast.makeText(getApplicationContext(),"E-mail para redefinição de senha enviado.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity().getApplicationContext(),"E-mail para redefinição de senha enviado.", Toast.LENGTH_LONG).show();
                 } else {
-                    Toast.makeText(getApplicationContext(),"Erro ao enviar e-mail.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity().getApplicationContext(),"Erro ao enviar e-mail.", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -110,8 +138,8 @@ public class Profile extends AppCompatActivity {
 
     public void signOutButton(View view){
         firebaseAuth.signOut();
-        Toast.makeText(getApplicationContext(),"Usuário saiu.", Toast.LENGTH_LONG).show();
-        Intent intent = new Intent(this, MainActivity.class);
+        Toast.makeText(getActivity().getApplicationContext(),"Usuário saiu.", Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(getActivity(), MainActivity.class);
         startActivity(intent);
     }
 }

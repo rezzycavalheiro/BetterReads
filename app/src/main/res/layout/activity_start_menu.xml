@@ -6,85 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".view.StartMenu">
 
-    <Button
-        android:id="@+id/order_start_manu_button2"
-        android:layout_width="122dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
-        android:fontFamily="@font/poppins_light"
-        android:onClick="addBookInfoButton"
-        android:text="@string/addButtonBook"
-        android:textStyle="bold"
-        app:backgroundTint="#0C6980"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="409dp"
+        android:layout_height="73dp"
+        android:background="#6ECFB3"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/order_start_manu_button"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="386dp"
-        android:layout_height="438dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="116dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.571"
-        app:layout_constraintStart_toStartOf="parent">
-
-    </androidx.recyclerview.widget.RecyclerView>
-
-    <TextView
-        android:id="@+id/order_title2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/poppins_light"
-        android:text="@string/startMenuTitle"
-        android:textColor="#050505"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:menu="@menu/bottom_menu" />
 
-    <Button
-        android:id="@+id/my_profile_button2"
-        android:layout_width="116dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginBottom="16dp"
-        android:fontFamily="@font/poppins_light"
-        android:onClick="myProfileButton"
-        android:text="@string/my_profile_button"
-        android:textStyle="bold"
-        app:backgroundTint="#0C6980"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView"
+        android:name="com.example.betterreads.view.MainMenu"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.608"
-        app:layout_constraintStart_toEndOf="@+id/order_start_manu_button2"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
-
-    <Button
-        android:id="@+id/order_start_manu_button"
-        android:layout_width="122dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginBottom="16dp"
-        android:fontFamily="@font/poppins_light"
-        android:onClick="addBookPicButton"
-        android:text="@string/addPicButton"
-        android:textStyle="bold"
-        app:backgroundTint="#0C6980"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
