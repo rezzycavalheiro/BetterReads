@@ -11,19 +11,19 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.betterreads.R;
-import com.example.betterreads.model.CarModel;
-import com.example.betterreads.model.CarPictures;
+import com.example.betterreads.model.PhotoModel;
+import com.example.betterreads.model.Pictures;
 
 import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> {
 
     private Context context;
-    private List<CarPictures> carPath;
+    private List<Pictures> picPath;
 
-    public RecyclerViewAdapter(Context context, List<CarPictures> carPath) {
+    public RecyclerViewAdapter(Context context, List<Pictures> picPath) {
         this.context = context;
-        this.carPath = carPath;
+        this.picPath = picPath;
     }
 
     @NonNull
@@ -35,21 +35,21 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewAdapter.MyViewHolder holder, int position) {
-        CarPictures carPictures = CarModel.getInstance().carsArray.get(position);
-        holder.carPic.setImageBitmap(BitmapFactory.decodeFile(carPictures.getCarPath()));
+        Pictures pictures = PhotoModel.getInstance().picturesArrayList.get(position);
+        holder.pic.setImageBitmap(BitmapFactory.decodeFile(pictures.getPicturePath()));
     }
 
     @Override
     public int getItemCount() {
-        return CarModel.getInstance().carsArray.size();
+        return PhotoModel.getInstance().picturesArrayList.size();
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
-        ImageView carPic;
+        ImageView pic;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            carPic = (ImageView) itemView.findViewById(R.id.car_pic);
+            pic = (ImageView) itemView.findViewById(R.id.car_pic);
         }
     }
 }

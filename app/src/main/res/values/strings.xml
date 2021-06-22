@@ -52,4 +52,13 @@
     <string name="tituloRecyclerView">Título</string>
     <string name="authorRecyclerView">Autor</string>
     <string name="statusRecyclerView">Status</string>
+    <string name="editTextAuthor">Autor</string>
+    <string name="editTextTitle">Título</string>
+    <string name="authorTitle">Autor</string>
+    <string name="editTextTitle2">Título do livro</string>
+    <string name="saveButton">Salvar</string>
+    <string name="statusTitle">Status</string>
+    <string name="startMenuTitle">Meus livros</string>
+    <string name="addButtonBook">Adicionar livro</string>
+    <string name="addPicButton">Adicionar capa</string>
 </resources>

@@ -21,8 +21,8 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.betterreads.R;
-import com.example.betterreads.model.CarModel;
-import com.example.betterreads.model.CarPictures;
+import com.example.betterreads.model.PhotoModel;
+import com.example.betterreads.model.Pictures;
 
 import java.io.File;
 import java.io.IOException;
@@ -157,7 +157,7 @@ public class CameraPage extends AppCompatActivity {
     // VOLTA PARA A PÁGINA DE PEDIDOS
     public void orderPageButton(View view){
         Intent orderPage = new Intent(this, OrderPage.class);
-        CarModel.getInstance().carsArray.add(new CarPictures(picturePath));
+        PhotoModel.getInstance().picturesArrayList.add(new Pictures(picturePath));
         startActivity(orderPage);
     }
 

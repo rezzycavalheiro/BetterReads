@@ -7,18 +7,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ProgressBar;
-import android.widget.SeekBar;
-import android.widget.TextView;
 
 import com.example.betterreads.R;
-import com.example.betterreads.model.CarPictures;
+import com.example.betterreads.model.Pictures;
 
 import java.util.List;
 
 public class OrderPage extends AppCompatActivity {
 
-    List<CarPictures> carPaths;
+    List<Pictures> carPaths;
     RecyclerView recyclerView;
     RecyclerViewAdapter adapter;
 
