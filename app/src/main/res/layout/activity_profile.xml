@@ -6,6 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".view.Profile">
 
+    <Button
+        android:id="@+id/logOutButton2"
+        android:layout_width="136dp"
+        android:layout_height="62dp"
+        android:fontFamily="@font/poppins_light"
+        android:onClick="signOutButton"
+        android:text="@string/logoutButton"
+        android:textStyle="bold"
+        app:backgroundTint="#0C6980"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/update_button"
+        app:layout_constraintVertical_bias="0.0" />
+
     <TextView
         android:id="@+id/editTextEmailRegister2"
         android:layout_width="331dp"
@@ -23,20 +38,20 @@
         app:layout_constraintHorizontal_bias="0.462"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.439" />
+        app:layout_constraintVertical_bias="0.282" />
 
     <Button
         android:id="@+id/delete_button"
         android:layout_width="136dp"
         android:layout_height="68dp"
-        android:layout_marginBottom="104dp"
+        android:layout_marginBottom="228dp"
         android:fontFamily="@font/poppins_light"
         android:onClick="deleteUser"
         android:text="@string/delete_profile_button"
         android:textStyle="bold"
         app:backgroundTint="#0C6980"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/update_button"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -53,22 +68,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.336" />
 
     <Button
         android:id="@+id/update_button"
         android:layout_width="140dp"
         android:layout_height="69dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginRight="48dp"
-        android:layout_marginBottom="104dp"
         android:fontFamily="@font/poppins_light"
         android:onClick="changePwd"
         android:text="@string/resetPwd"
         android:textStyle="bold"
         app:backgroundTint="#0C6980"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/delete_button" />
 
     <TextView
         android:id="@+id/profileTitle"
@@ -94,11 +108,9 @@
         android:hint="@string/editTextPwdProfile"
         android:importantForAutofill="no"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextEmailRegister"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextEmailRegister" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

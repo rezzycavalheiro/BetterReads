@@ -119,4 +119,11 @@ public class Profile extends AppCompatActivity {
             }
         });
     }
+
+    public void signOutButton(View view){
+        firebaseAuth.signOut();
+        Toast.makeText(getApplicationContext(),"Usuário saiu.", Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
 }
