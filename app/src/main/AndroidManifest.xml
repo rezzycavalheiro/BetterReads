@@ -13,10 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BetterReads">
-        <activity android:name=".view.AddBookInfo"></activity>
-        <activity android:name=".view.Profile" />
         <activity android:name=".view.StartMenu" />
-        <activity android:name=".view.OrderPage" />
         <activity android:name=".view.CameraPage" />
         <activity android:name=".view.Register" />
         <activity android:name=".view.Login" />
